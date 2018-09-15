@@ -102,7 +102,8 @@ class PyContacts:
                 break
 
         with open(self.file_name, 'w+') as outfile:
-            yaml.dump(data, outfile, default_flow_style=False, allow_unicode=True)
+            if data:
+                yaml.dump(data, outfile, default_flow_style=False, allow_unicode=True)
 
         print ("Contact deletion successful")
 
